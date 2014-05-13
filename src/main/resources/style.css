@@ -1,0 +1,10 @@
+.root {
+    -fx-background: rgb(0, 0, 0);
+}
+.imageView {
+    -fx-background: rgb(0, 0, 0);
+}
+.infoPane {
+    -fx-padding: 10px;
+    -fx-background-color: rgba(0, 0, 0, 0.4);
+}
