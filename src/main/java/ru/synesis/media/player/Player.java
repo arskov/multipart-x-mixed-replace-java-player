@@ -238,8 +238,6 @@ public class Player extends Application {
                         dialogStage.setScene(new Scene(VBoxBuilder.create()
                             .children(new Label(event.getMessage()), ok)
                             .alignment(Pos.CENTER).padding(new Insets(10))
-                            .minHeight(40)
-                            .prefHeight(50)
                             .spacing(7)
                             .build()));
                         ok.setOnAction(new EventHandler<ActionEvent>() {
