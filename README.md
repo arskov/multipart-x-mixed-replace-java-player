@@ -17,7 +17,7 @@ How to use
 1. Clone the repo
 2. Install JDK 7
 3. Import as Maven project into Eclipse
-4. Update <jdk.path>c:/java-tools/jdk1.7.0_51</jdk.path> property in pom.xml according to your setup path of JDK
+4. Update **jdk.path** property in pom.xml according to your setup path of JDK
 5. Enjoy!
 
 Code example
