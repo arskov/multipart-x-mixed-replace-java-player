@@ -225,31 +225,36 @@ public class Player extends Application {
         streamThread = new StreamThread(currentUrl, ownerStage, scene, menuBar, imageView);
         streamThread.setOnErrorHandler(new StreamEventHandler<StreamEvent>() {
             @Override
-            public void handle(StreamEvent event) {
-                Button ok = new Button("Ok");
-                ok.setMinWidth(70);
-                final Stage dialogStage = new Stage();
-                dialogStage.initOwner(ownerStage);
-                dialogStage.initStyle(StageStyle.UTILITY);
-                dialogStage.initModality(Modality.WINDOW_MODAL);
-                dialogStage.setScene(new Scene(VBoxBuilder.create()
-                    .children(new Label(event.getMessage()), ok)
-                    .alignment(Pos.CENTER).padding(new Insets(10))
-                    .minHeight(40)
-                    .prefHeight(50)
-                    .spacing(7)
-                    .build()));
-                ok.setOnAction(new EventHandler<ActionEvent>() {
+            public void handle(final StreamEvent event) {
+                Platform.runLater(new Runnable() {
                     @Override
-                    public void handle(ActionEvent arg0) {
-                        
-                        if (streamThread != null && streamThread.isAlive() && !streamThread.isInterrupted()) {
-                            streamThread.interrupt();
-                        }
-                        dialogStage.close();
+                    public void run() {
+                        Button ok = new Button("Ok");
+                        ok.setMinWidth(70);
+                        final Stage dialogStage = new Stage();
+                        dialogStage.initOwner(ownerStage);
+                        dialogStage.initStyle(StageStyle.UTILITY);
+                        dialogStage.initModality(Modality.WINDOW_MODAL);
+                        dialogStage.setScene(new Scene(VBoxBuilder.create()
+                            .children(new Label(event.getMessage()), ok)
+                            .alignment(Pos.CENTER).padding(new Insets(10))
+                            .minHeight(40)
+                            .prefHeight(50)
+                            .spacing(7)
+                            .build()));
+                        ok.setOnAction(new EventHandler<ActionEvent>() {
+                            @Override
+                            public void handle(ActionEvent arg0) {
+                                
+                                if (streamThread != null && streamThread.isAlive() && !streamThread.isInterrupted()) {
+                                    streamThread.interrupt();
+                                }
+                                dialogStage.close();
+                            }
+                        });
+                        dialogStage.show();
                     }
                 });
-                dialogStage.show();
             }
         });
         streamThread.setOnStatsHandler(new StreamEventHandler<StreamEvent>() {
