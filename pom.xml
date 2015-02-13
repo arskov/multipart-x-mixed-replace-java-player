@@ -15,8 +15,8 @@
         <compiler.plugin.version>3.1</compiler.plugin.version>
         <eclipse.plugin.version>2.9</eclipse.plugin.version>
         <junit.version>4.11</junit.version>
-        <java.version>1.7</java.version>
-        <jdk.path>c:/java-tools/jdk1.7.0_51</jdk.path>
+        <java.version>1.8</java.version>
+        <jdk.path>c:/java-tools/jdk1.8.0_05</jdk.path>
     </properties>
 
     <build>
@@ -82,7 +82,7 @@
             <artifactId>javafx-runtime</artifactId>
             <version>2.2.51</version>
             <scope>system</scope>
-            <systemPath>${jdk.path}/jre/lib/jfxrt.jar</systemPath>
+            <systemPath>${jdk.path}/jre/lib/ext/jfxrt.jar</systemPath>
         </dependency>
     </dependencies>
 
