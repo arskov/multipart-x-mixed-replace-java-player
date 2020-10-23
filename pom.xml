@@ -14,7 +14,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <compiler.plugin.version>3.1</compiler.plugin.version>
         <eclipse.plugin.version>2.9</eclipse.plugin.version>
-        <junit.version>4.11</junit.version>
+        <junit.version>4.13.1</junit.version>
         <java.version>1.8</java.version>
         <jdk.path>c:/java-tools/jdk1.8.0_05</jdk.path>
     </properties>
@@ -74,7 +74,7 @@
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
-            <version>4.11</version>
+            <version>${junit.version}</version>
             <scope>test</scope>
         </dependency>
         <dependency>
